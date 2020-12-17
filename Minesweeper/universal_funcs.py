@@ -7,9 +7,6 @@ def sleep(x):
 def clear_screen():
     pyautogui.hotkey('ctrl', 'l')
 
-def quit_it():
-    quit()
-
 def check_if_won(board):
     for row in board:
         for cell in row:
