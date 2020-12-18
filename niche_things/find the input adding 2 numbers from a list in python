@@ -1,0 +1,20 @@
+given_list = [1, 2, 3, 4, 6, 7, 10, 12, 15]
+
+#This function looks for two numbers in a list that when added are equal to the input the user provided
+def find_pair(desired):
+    left = 0  #Defines a pointer that starts from the beginning of the list
+    right = len(given_list) - 1  #Defines a pointer that starts from the end of the list
+
+    while left != right:
+        if given_list[left] + given_list[right] == desired:   #The first case checks to see if the initial position of both pointers is equal to the input, if so, return both numbers
+            return given_list[left] , given_list[right]
+
+        elif given_list[left] + given_list[right] > desired:  #If the left pointer plus the right pointer is greater than the desired value, decrease 1 from the right pointer
+            right -= 1
+
+        elif given_list[left] + given_list[right] < desired:  #If the left pointer plus the right pointer is smaller than the desired value, add 1 to the left pointer
+            left += 1
+
+    return 0, 0  #After checking the entire list, if there are no numbers that are equal to the result when added, the function will return 0, 0
+
+print(find_pair(10))
