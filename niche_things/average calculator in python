@@ -1,0 +1,30 @@
+import time
+
+print("I'm going to print the average score!")
+
+while True:
+    try:
+        nr_of_scores = int(input("What's the number of scores?"))
+
+        if type(nr_of_scores) is int:
+            break
+
+    except ValueError:
+        print("That's not a number!")
+
+counter = 0
+scores = []
+
+while counter != nr_of_scores:
+    try:
+        answer = float(input("What's the score?"))
+        scores.append(answer)
+        print(scores)
+        counter += 1
+
+    except ValueError:
+        print("That's not a number!")
+
+print("Calculating average score....")
+time.sleep(2)
+print(sum(scores) / nr_of_scores)
