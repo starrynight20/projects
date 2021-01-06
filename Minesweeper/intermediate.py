@@ -69,7 +69,12 @@ def fake_intermediate_board():
             flag = input("Flag? y/n/u\n")
 
             if flag == 'y':
-                fake_intermediate_board[y][x] = 'F'
+                if fake_intermediate_board[y][x] != '-':
+                    print("Can't flag a number")
+
+                else:
+                    fake_intermediate_board[y][x] = 'F'
+
                 clear_screen()
 
             elif flag == 'n':
