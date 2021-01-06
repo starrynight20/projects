@@ -72,6 +72,14 @@ def main_menu_choice(x):
     elif x == 2:
         clear_screen()
 
+        a = open("scores_beginner.txt", "a+")
+        b = open("scores_intermediate.txt", "a+")
+        c = open("scores_expert.txt", "a+")
+
+        a.close()
+        b.close()
+        c.close()
+
         while True:
             try:
                 print("What scoreboard would you like to print?\n"
@@ -137,10 +145,5 @@ def main_menu_choice(x):
         print("Quitting...")
         sleep(1)
         quit()
-
-#Categories:
-#Beginner ( 9 x 9, 10 )
-#Intermediate ( 16 x 16, 30 )
-#Expert ( 16 x 30, 99 )
 
 main_menu()
